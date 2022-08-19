@@ -7,20 +7,27 @@ import NavbarWrapper, {
   SearchPanel,
 } from "./styles";
 import SearchIcon from "@mui/icons-material/Search";
+import Link from "../../Link";
 
 const Navbar = () => {
   return (
     <NavbarWrapper>
       <Container className="container">
-        <LogoContainer>
-          <Image src="img/logo.svg" alt="Logo" className="logo" />
-          <h1 className="site-name">
-            <span className="app-title">Bloggy</span>
-            <span className="app-subtitle">Test Semana</span>
-          </h1>
-        </LogoContainer>
+        <Link href="/">
+          <LogoContainer>
+            <Image src="img/logo.svg" alt="Logo" className="logo" />
+            <h1 className="site-name">
+              <span className="app-title">Bloggy</span>
+              <span className="app-subtitle">Test Semana</span>
+            </h1>
+          </LogoContainer>
+        </Link>
         <SearchPanel>
-          <Input placeholder="Buscar aquí" label="Buscar aquí" required={true} />
+          <Input
+            placeholder="Buscar aquí"
+            label="Buscar aquí"
+            required={true}
+          />
           <SearchButton variant="contained" color="primary" type="submit">
             <SearchIcon />
           </SearchButton>

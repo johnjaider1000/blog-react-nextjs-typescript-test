@@ -1,8 +1,9 @@
 import { Button, styled } from "@mui/material";
 import theme from "../../../../theme";
 
-export const LogoContainer = styled("div")`
+export const LogoContainer = styled("a")`
   display: flex;
+  cursor: pointer;
   & .logo {
     width: 54px;
   }
