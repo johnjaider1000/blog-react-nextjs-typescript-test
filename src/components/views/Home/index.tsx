@@ -10,7 +10,7 @@ const HomeView = () => {
   return (
     <Layout>
       <ArticleGroup
-        data={data?.data}
+        data={[...(data?.data || [])]}
         loading={loading}
         type="banner"
         start={0}
@@ -20,11 +20,11 @@ const HomeView = () => {
         <PrincipalSection>
           <SectionHeader title="Últimas noticias" />
           <ArticleGroup
-            data={data?.data}
+            data={[...(data?.data || [])]}
             loading={loading}
-            type="inverse"
-            start={0}
-            end={6}
+            type="extended"
+            start={3}
+            end={15}
           />
         </PrincipalSection>
         <Aside>

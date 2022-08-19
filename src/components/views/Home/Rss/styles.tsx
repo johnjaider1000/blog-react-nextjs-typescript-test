@@ -5,6 +5,7 @@ const RssWrapper = styled("div")`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
+  margin-bottom: 10px;
 `;
 
 export const RssItem = styled("div")`

@@ -3,7 +3,7 @@ import axios, { AxiosRequestConfig } from "axios";
 
 const useFecth = <T = any, D = any>(
   uri: string,
-  params: AxiosRequestConfig<D>
+  params?: AxiosRequestConfig<D>
 ) => {
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState<T>();

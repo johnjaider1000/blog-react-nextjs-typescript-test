@@ -1,5 +1,6 @@
 import Swal, { SweetAlertResult } from "sweetalert2";
 import { get } from "object-path";
+import moment from "moment";
 
 interface ConfirmProps {
   title?: string;
@@ -26,4 +27,12 @@ export const getProp = (object: any, path: string, defaultValue?: any) => {
     return;
   }
   return get(object, path, defaultValue);
+};
+
+export const getRandomInt = (max: number) => {
+  return Math.floor(Math.random() * max);
+};
+
+export const parseDate = (date: moment.MomentInput) => {
+  return moment(date).format("ll");
 };

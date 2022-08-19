@@ -16,6 +16,14 @@ export interface Article {
   owner: Owner;
 }
 
+export interface Comment {
+  id: string;
+  message: string;
+  owner: Owner;
+  post: string;
+  publishDate: string;
+}
+
 export interface FetchResponse<T = never> {
   data: T;
   total: number;

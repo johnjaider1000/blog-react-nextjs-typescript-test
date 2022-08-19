@@ -16,6 +16,7 @@ const theme = createTheme({
     },
     //Add your custom props...
     gray: {
+      900: "#111111",
       800: "#444444",
       700: "##666666",
       600: "#969696",

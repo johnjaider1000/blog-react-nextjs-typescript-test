@@ -1,7 +1,6 @@
 import { Container } from "@mui/material";
 import TopBarWrapper, { ListTopBar, ListItem } from "./styles";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
-import WbCloudyIcon from "@mui/icons-material/WbCloudy";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import GoogleIcon from "@mui/icons-material/Google";
 import InstagramIcon from "@mui/icons-material/Instagram";
@@ -19,10 +18,6 @@ const TopBar = () => {
             <span className="label">2022-08-19</span>
           </ListItem>
           <ListItem>
-            <WbCloudyIcon className="icon" />
-            <span className="label">2022-08-19</span>
-          </ListItem>
-          <ListItem>
             <a className="label">Escríbenos</a>
           </ListItem>
           <ListItem>
@@ -30,6 +25,15 @@ const TopBar = () => {
           </ListItem>
           <ListItem>
             <a className="label">Contacto</a>
+          </ListItem>
+          <ListItem>
+            <a
+              className="label"
+              href="https://github.com/johnjaider1000"
+              target="_blank"
+            >
+              @jhonjaider1000
+            </a>
           </ListItem>
           <RightItems>
             <ListItem className="to-right">

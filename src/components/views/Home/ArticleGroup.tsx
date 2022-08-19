@@ -2,13 +2,16 @@ import { ArticleGroupWrapper } from "./styles";
 import ArticleComponent from "../../shared/Article";
 import React from "react";
 import { Props } from "./types";
+import { ArticleType } from "../../shared/Article/types";
 
 const ArticleGroup: React.FC<Props> = ({ data, loading, type, start, end }) => {
-  const getType = () => {
+  const getType = (): ArticleType => {
     switch (type) {
       case "banner":
       case "inverse":
         return loading ? "skeleton-banner" : "banner";
+      default:
+        return loading ? "skeleton" : "normal";
     }
   };
 
@@ -34,15 +37,18 @@ const ArticleGroup: React.FC<Props> = ({ data, loading, type, start, end }) => {
                 adjustment={isPrincipal(index)}
               />
             ))}
-        {data?.splice(start, end).map((item, index) => (
-          <ArticleComponent
-            data={item}
-            type={getType()}
-            key={index}
-            gridColumn={isPrincipal(index) ? "span-2" : "span-1"}
-            adjustment={isPrincipal(index)}
-          />
-        ))}
+        {!loading &&
+          data
+            ?.splice(start, end)
+            .map((item, index) => (
+              <ArticleComponent
+                data={item}
+                type={getType()}
+                key={index}
+                gridColumn={isPrincipal(index) ? "span-2" : "span-1"}
+                adjustment={isPrincipal(index)}
+              />
+            ))}
       </ArticleGroupWrapper>
     </>
   );
