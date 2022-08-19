@@ -3,24 +3,21 @@ import { getProp, getRandomInt } from "../../../utils/Extra";
 import Layout from "../../shared/Layout";
 import PostWrapper, { CommentsContainer } from "./styles";
 import ArticleComponent from "../../shared/Article/index";
-import { Article } from "../../../types/index";
+import { Article, Comment, FetchResponse } from "../../../types/index";
 import { Aside, PrincipalSection } from "../Home/styles";
 import useGetListPost from "../../../hooks/useGetListPosts";
 import SectionHeader from "../Home/SectionHeader";
 import RssComponent from "../Home/Rss";
-import useGetListcomments from "../../../hooks/useGetListComments";
 import CommentComponent from "../../shared/Comment";
 
 interface Props {
   id: string;
+  comments: FetchResponse<Array<Comment>>;
   post: Article;
 }
 
-const PostView: React.FC<Props> = ({ id, post }) => {
-  const { data: commentData, loading: loadingPost } = useGetListcomments({
-    postId: id,
-  });
-  const { data } = useGetListPost({
+const PostView: React.FC<Props> = ({ id, post, comments: commentData }) => {
+  const { data, loading: loadingPost } = useGetListPost({
     page: 1,
     limit: 10,
   });
@@ -35,7 +32,9 @@ const PostView: React.FC<Props> = ({ id, post }) => {
             type={"normal"}
             showAllTags={true}
           />
-          <SectionHeader title={`Comentarios (${commentData?.total})`} />
+          <SectionHeader
+            title={`Comentarios (${getProp(commentData, "total", 0)})`}
+          />
           <CommentsContainer>
             {commentData?.data.map((item, index) => (
               <CommentComponent data={item} key={index} />
