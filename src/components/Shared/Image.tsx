@@ -1,11 +1,14 @@
 import React from "react";
 interface Props {
-  src: string;
-  alt: string;
+  src?: string | undefined;
+  alt?: string;
   className?: string;
 }
 
-export const resolvePath = (src: string): string => {
+export const resolvePath = (src?: string): string | undefined => {
+  if (!src) {
+    return src;
+  }
   if (src.startsWith("http")) {
     return src;
   }
@@ -13,6 +16,9 @@ export const resolvePath = (src: string): string => {
 };
 
 const Image: React.FC<Props> = ({ src, alt, className }) => {
+  if (!src) {
+    return null;
+  }
   const resolvedPath = resolvePath(src);
   return <img src={resolvedPath} alt={alt} className={className} />;
 };

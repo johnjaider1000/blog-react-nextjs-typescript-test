@@ -6,7 +6,7 @@ import LayoutWrapperStyles from "./styles";
 import TopBar from "./TopBar";
 
 interface Props {
-  children: ReactElement;
+  children: ReactElement | ReactElement[];
 }
 
 const Layout: React.FC<Props> = ({ children }) => {
@@ -17,7 +17,6 @@ const Layout: React.FC<Props> = ({ children }) => {
       <MenuArea />
       <Container className="layout-container">
         <main className="principal-main">{children}</main>
-        <aside className="principal-aside"></aside>
       </Container>
     </LayoutWrapperStyles>
   );

@@ -3,7 +3,7 @@ import Image from "../../Image";
 import { Children, CubeImageWrapper } from "./styles";
 
 interface Props {
-  src: string;
+  src: string | undefined;
   className?: string;
   children?: any;
 }

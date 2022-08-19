@@ -6,6 +6,8 @@ export default styled("section")`
   & .container {
     height: 100%;
   }
+  border-top: 1px solid ${({ theme }) => theme.palette.gray[200]};
+  border-bottom: 1px solid ${({ theme }) => theme.palette.gray[200]};
 `;
 
 export const List = styled("ul")`

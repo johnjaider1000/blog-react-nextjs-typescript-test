@@ -8,6 +8,7 @@ import Router from "next/router";
 import "nprogress/nprogress.css";
 import NProgress from "nprogress";
 import createEmotionCache from "../src/config/cache/createEmotionCache";
+import "../src/config/axios";
 
 Router.events.on("routeChangeStart", (url: any) => {
   console.log(url);

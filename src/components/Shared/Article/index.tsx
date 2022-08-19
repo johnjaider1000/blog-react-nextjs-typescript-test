@@ -1,40 +1,25 @@
 import React from "react";
-import CubeImage from "../Extra/CubeImage";
+import ArticleImage from "./ArticleImage";
 import ArticleWrapper from "./styles";
+import { Props } from "./types";
 
-interface Owner {
-  id: string;
-  title: string;
-  firstName: string;
-  lastName: string;
-  picture: string;
-}
-
-interface Article {
-  id: string;
-  image: string;
-  likes: number;
-  tags: Array<string>;
-  text: string;
-  publishDate: string;
-  owner: Owner;
-}
-
-interface Props {
-  data: Article;
-}
-
-const Article: React.FC<Props> = ({ data: { image, text } }) => {
+const ArticleComponent: React.FC<Props> = ({
+  data,
+  type = "normal",
+  className,
+  adjustment,
+}) => {
+  if (!data && type === "normal") {
+    return null;
+  }
   return (
-    <ArticleWrapper>
-      <div className="image-content">
-        <CubeImage src={image} className="image-article" />
-      </div>
+    <ArticleWrapper className={className}>
+      <ArticleImage data={data} type={type} adjustment={adjustment} />
       <div className="title-content">
-        <h3 className="description">{text}</h3>
+        {type === "normal" && <h3 className="description">{data.text}</h3>}
       </div>
     </ArticleWrapper>
   );
 };
 
-export default Article;
+export default ArticleComponent;
