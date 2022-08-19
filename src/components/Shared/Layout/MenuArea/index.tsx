@@ -29,15 +29,27 @@ export default MenuArea;
 
 const list: Array<MenuItem> = [
   {
-    label: "Home",
+    label: "Inicio",
     href: "/",
   },
   {
-    label: "Option",
+    label: "Páginas",
     href: "/",
   },
   {
-    label: "Option",
+    label: "Vídeos",
+    href: "/",
+  },
+  {
+    label: "Negocios",
+    href: "/",
+  },
+  {
+    label: "Cursos",
+    href: "/",
+  },
+  {
+    label: "Noticias",
     href: "/",
   },
 ];

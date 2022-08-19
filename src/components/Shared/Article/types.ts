@@ -9,5 +9,5 @@ export interface Props {
   adjustment?: boolean;
 }
 
-export const RELATION_ASPECT = "56.6%";
-export const RELATION_ASPECT_ADJUSTMENT = "58%";
+export const RELATION_ASPECT = "64.6%";
+export const RELATION_ASPECT_ADJUSTMENT = "66%";

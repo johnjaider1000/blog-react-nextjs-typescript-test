@@ -3,6 +3,7 @@ import { RELATION_ASPECT, RELATION_ASPECT_ADJUSTMENT } from "./types";
 
 export default styled("article")`
   margin-bottom: 10px;
+  cursor: pointer;
   & .image-content {
     width: 100%;
     & .image-article {

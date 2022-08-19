@@ -4,6 +4,9 @@ import { createTheme } from "@mui/material";
  * DOCS: https://mui.com/material-ui/customization/default-theme/#main-content
  */
 const theme = createTheme({
+  typography: {
+    fontFamily: "Roboto",
+  },
   palette: {
     primary: {
       main: "#d32f2f",

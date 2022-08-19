@@ -18,7 +18,7 @@ export const LogoContainer = styled("div")`
       margin-top: 4px;
       font-size: 0.5em;
       color: ${({ theme }) => theme.palette.gray[600]};
-      font-weight: 100;
+      font-weight: 300;
       text-transform: uppercase;
     }
   }
@@ -34,11 +34,13 @@ export const SearchButton = styled(Button)`
   position: absolute;
   right: 4px;
   top: 4px;
-  min-width: 30px;
-  min-height: 30px;
-  width: 30px;
-  height: 30px;
+  min-width: 32px;
+  min-height: 32px;
+  width: 32px;
+  height: 32px;
   padding: 4px !important;
+  box-shadow: none;
+  border-radius: 3px;
 `;
 
 export default styled("nav")`

@@ -3,6 +3,7 @@ import React from "react";
 import { Article } from "../../../types";
 import CubeImage from "../Extra/CubeImage";
 import { ArticleType, RELATION_ASPECT } from "./types";
+import moment from "moment";
 
 interface Props {
   data: Article;
@@ -38,7 +39,9 @@ const ArticleImage: React.FC<Props> = ({
                       className="chip"
                     />
                   ))}
-                  <span className="date">{publishDate}</span>
+                  <span className="date">
+                    {moment(publishDate).format("ll")}
+                  </span>
                 </div>
               </div>
             )}

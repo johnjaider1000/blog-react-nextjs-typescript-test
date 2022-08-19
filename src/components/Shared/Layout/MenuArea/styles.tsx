@@ -28,7 +28,7 @@ export const ListItem = styled("li")`
     padding: 15px;
     justify-content: center;
     align-items: center;
-    font-weight: bold;
+    font-weight: 500;
     color: ${({ theme }) => theme.palette.gray[800]};
     text-transform: uppercase;
     font-size: 0.9em;

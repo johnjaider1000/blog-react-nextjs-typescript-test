@@ -1,24 +1,15 @@
 import HomeWrapperStyles, { Aside, PrincipalSection } from "./styles";
 import ArticleComponent from "../../shared/Article";
-import useGetListPost from "../../../hooks/useGetListPosts";
 import { getProp } from "../../../utils/Extra";
+import React from "react";
+import { Props } from "./types";
 
-const PrincipalSectionComponent = () => {
-  const { loading, data } = useGetListPost({ page: 1, limit: 3 });
-
-  if (
-    loading === false &&
-    Array.isArray(data?.data) &&
-    data?.data.length == 0
-  ) {
-    return null;
-  }
-
+const ArticleGroup: React.FC<Props> = ({ data, loading }) => {
   return (
     <HomeWrapperStyles>
       <PrincipalSection>
         <ArticleComponent
-          data={getProp(data?.data, "0")}
+          data={getProp(data, "0")}
           type={loading ? "skeleton-banner" : "banner"}
           className="principal-article"
           adjustment={true}
@@ -26,11 +17,11 @@ const PrincipalSectionComponent = () => {
       </PrincipalSection>
       <Aside>
         <ArticleComponent
-          data={getProp(data?.data, "1")}
+          data={getProp(data, "1")}
           type={loading ? "skeleton-banner" : "banner"}
         />
         <ArticleComponent
-          data={getProp(data?.data, "2")}
+          data={getProp(data, "2")}
           type={loading ? "skeleton-banner" : "banner"}
         />
       </Aside>
@@ -38,4 +29,4 @@ const PrincipalSectionComponent = () => {
   );
 };
 
-export default PrincipalSectionComponent;
+export default ArticleGroup;
