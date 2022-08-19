@@ -7,20 +7,25 @@ import RssComponent from "./Rss";
 
 const HomeView = () => {
   const { loading, data } = useGetListPost({ page: 1, limit: 20 });
-
-  if (
-    loading === false &&
-    Array.isArray(data?.data) &&
-    data?.data.length == 0
-  ) {
-    return null;
-  }
   return (
     <Layout>
-      <ArticleGroup data={data?.data.splice(0, 3)} loading={loading} />
+      <ArticleGroup
+        data={data?.data}
+        loading={loading}
+        type="banner"
+        start={0}
+        end={3}
+      />
       <HomeWrapperStyles>
         <PrincipalSection>
           <SectionHeader title="Últimas noticias" />
+          <ArticleGroup
+            data={data?.data}
+            loading={loading}
+            type="inverse"
+            start={0}
+            end={6}
+          />
         </PrincipalSection>
         <Aside>
           <SectionHeader title="Síganos" />

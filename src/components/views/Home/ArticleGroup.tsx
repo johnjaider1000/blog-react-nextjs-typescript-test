@@ -1,31 +1,50 @@
-import HomeWrapperStyles, { Aside, PrincipalSection } from "./styles";
+import { ArticleGroupWrapper } from "./styles";
 import ArticleComponent from "../../shared/Article";
-import { getProp } from "../../../utils/Extra";
 import React from "react";
 import { Props } from "./types";
 
-const ArticleGroup: React.FC<Props> = ({ data, loading }) => {
+const ArticleGroup: React.FC<Props> = ({ data, loading, type, start, end }) => {
+  const getType = () => {
+    switch (type) {
+      case "banner":
+      case "inverse":
+        return loading ? "skeleton-banner" : "banner";
+    }
+  };
+
+  const isPrincipal = (index: number) => {
+    switch (type) {
+      case "banner":
+        return index === 0;
+      case "inverse":
+        return index === 1;
+    }
+  };
   return (
-    <HomeWrapperStyles>
-      <PrincipalSection>
-        <ArticleComponent
-          data={getProp(data, "0")}
-          type={loading ? "skeleton-banner" : "banner"}
-          className="principal-article"
-          adjustment={true}
-        />
-      </PrincipalSection>
-      <Aside>
-        <ArticleComponent
-          data={getProp(data, "1")}
-          type={loading ? "skeleton-banner" : "banner"}
-        />
-        <ArticleComponent
-          data={getProp(data, "2")}
-          type={loading ? "skeleton-banner" : "banner"}
-        />
-      </Aside>
-    </HomeWrapperStyles>
+    <>
+      <ArticleGroupWrapper>
+        {(loading || !data) &&
+          new Array(end)
+            .fill(0)
+            .map((item, index) => (
+              <ArticleComponent
+                key={index}
+                type={getType()}
+                gridColumn={isPrincipal(index) ? "span-2" : "span-1"}
+                adjustment={isPrincipal(index)}
+              />
+            ))}
+        {data?.splice(start, end).map((item, index) => (
+          <ArticleComponent
+            data={item}
+            type={getType()}
+            key={index}
+            gridColumn={isPrincipal(index) ? "span-2" : "span-1"}
+            adjustment={isPrincipal(index)}
+          />
+        ))}
+      </ArticleGroupWrapper>
+    </>
   );
 };
 

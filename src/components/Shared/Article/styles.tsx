@@ -2,8 +2,12 @@ import { styled } from "@mui/material";
 import { RELATION_ASPECT, RELATION_ASPECT_ADJUSTMENT } from "./types";
 
 export default styled("article")`
-  margin-bottom: 10px;
   cursor: pointer;
+  grid-column: span 1;
+  &.span-2 {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
   & .image-content {
     width: 100%;
     & .image-article {

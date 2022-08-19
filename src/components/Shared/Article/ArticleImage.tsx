@@ -6,7 +6,7 @@ import { ArticleType, RELATION_ASPECT } from "./types";
 import moment from "moment";
 
 interface Props {
-  data: Article;
+  data?: Article;
   type: ArticleType;
   adjustment?: boolean;
 }
