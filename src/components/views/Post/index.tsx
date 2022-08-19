@@ -17,7 +17,7 @@ interface Props {
 }
 
 const PostView: React.FC<Props> = ({ id, post }) => {
-  const { data: commentData } = useGetListcomments({
+  const { data: commentData, loading: loadingPost } = useGetListcomments({
     postId: id,
   });
   const { data } = useGetListPost({
@@ -44,13 +44,22 @@ const PostView: React.FC<Props> = ({ id, post }) => {
         </PrincipalSection>
         <Aside className="aside-content">
           <div className="related-content">
-            {[...(data?.data || [])]
-              .filter((item) => item.id !== id)
-              .splice(getRandomInt(5), 3)
-              .map((item, index) => (
-                <ArticleComponent data={item} type="banner" key={index} />
-              ))}
+            {loadingPost &&
+              new Array(3)
+                .fill(null)
+                .map((item, index) => (
+                  <ArticleComponent type="skeleton-banner" key={index} />
+                ))}
+
+            {!loadingPost &&
+              [...(data?.data || [])]
+                .filter((item) => item.id !== id)
+                .splice(getRandomInt(5), 3)
+                .map((item, index) => (
+                  <ArticleComponent data={item} type="banner" key={index} />
+                ))}
           </div>
+
           <SectionHeader title="Síganos" />
           <RssComponent />
         </Aside>
