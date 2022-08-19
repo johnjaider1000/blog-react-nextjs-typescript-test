@@ -6,6 +6,8 @@ The apis that I have used for this project contain ramdom information and I have
 
 ## How to use
 
+You can see the result of the project online [here](https://blog-react-nextjs-typescript-test.vercel.app/).
+
 Download the example [or clone the repo](https://github.com/johnjaider1000/blog-react-test):
 
 <!-- #default-branch-switch -->
