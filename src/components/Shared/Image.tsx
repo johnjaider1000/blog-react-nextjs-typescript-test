@@ -6,6 +6,9 @@ interface Props {
 }
 
 export const resolvePath = (src: string): string => {
+  if (src.startsWith("http")) {
+    return src;
+  }
   return `/static/${src}`;
 };
 

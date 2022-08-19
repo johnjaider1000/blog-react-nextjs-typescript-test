@@ -9,11 +9,11 @@ import { ColorScale } from "./types";
 
 declare module "@mui/material/styles" {
   interface Palette {
-    customColor: ColorScale;
+    gray: ColorScale;
     custonButtonColor: SimplePaletteColorOptions;
   }
   interface PaletteOptions {
-    customColor: ColorScale;
+    gray: ColorScale;
     custonButtonColor: SimplePaletteColorOptions;
   }
   export function createTheme(options?: ThemeOptions, ...args: object[]): Theme;

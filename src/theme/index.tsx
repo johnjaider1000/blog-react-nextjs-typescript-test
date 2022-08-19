@@ -6,14 +6,18 @@ import { createTheme } from "@mui/material";
 const theme = createTheme({
   palette: {
     primary: {
-      main: "#ff149d",
+      main: "#d32f2f",
     },
     secondary: {
-      main: "#22FF14",
+      main: "#222222",
     },
     //Add your custom props...
-    customColor: {
-      700: "#63033b",
+    gray: {
+      800: "#444444",
+      700: "##666666",
+      600: "#969696",
+      200: "#eeeeee",
+      100: "#f5f5f5",
     },
     custonButtonColor: {
       main: "#B008FF",
