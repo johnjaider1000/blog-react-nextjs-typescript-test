@@ -1,4 +1,4 @@
-# Blog Test Next.js with React, Mui and TypeScript
+# Blog Test with React, Mui, Next.js and TypeScript
 
 ## How to use
 
