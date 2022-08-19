@@ -1,6 +1,12 @@
 # Blog Test with React, Mui, Next.js and TypeScript
 
+Simple blog where I show a bit of my architecture, technologies and way of implementing a project with React, Material-UI, Next.js and hook-oriented axios. I will continue the project in the future and do more advanced implementations with Redux and context.
+
+The apis that I have used for this project contain ramdom information and I have taken them from https://dummyapi.io/docs.
+
 ## How to use
+
+You can see the result of the project online [here](https://blog-react-nextjs-typescript-test.vercel.app/).
 
 Download the example [or clone the repo](https://github.com/johnjaider1000/blog-react-test):
 
