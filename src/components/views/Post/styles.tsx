@@ -13,6 +13,17 @@ const PostWrapper = styled("div")`
       margin-bottom: 15px;
     }
   }
+  & .principal-article {
+    & .info-content {
+      & .description {
+        font-weight: bold;
+        font-size: 1.6em;
+        line-height: 1.2em;
+        text-transform: capitalize;
+        margin-bottom: 10px;
+      }
+    }
+  }
 `;
 
 export const CommentsContainer = styled("div")`

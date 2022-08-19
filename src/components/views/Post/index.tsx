@@ -29,7 +29,12 @@ const PostView: React.FC<Props> = ({ id, post }) => {
     <Layout title={getProp(post, "text")}>
       <PostWrapper>
         <PrincipalSection>
-          <ArticleComponent data={post} type={"normal"} showAllTags={true} />
+          <ArticleComponent
+            className="principal-article"
+            data={post}
+            type={"normal"}
+            showAllTags={true}
+          />
           <SectionHeader title={`Comentarios (${commentData?.total})`} />
           <CommentsContainer>
             {commentData?.data.map((item, index) => (
