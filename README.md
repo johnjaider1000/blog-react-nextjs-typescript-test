@@ -2,7 +2,7 @@
 
 ## How to use
 
-Download the example [or clone the repo](https://github.com/mui/material-ui):
+Download the example [or clone the repo](https://github.com/johnjaider1000/blog-react-test):
 
 <!-- #default-branch-switch -->
 
