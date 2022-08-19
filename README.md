@@ -1,4 +1,4 @@
-# Next.js with TypeScript example
+# Test Next.js with React, Mui and TypeScript
 
 ## How to use
 
